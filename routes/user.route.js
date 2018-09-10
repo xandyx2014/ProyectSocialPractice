@@ -1,0 +1,11 @@
+"use strict";
+const express = require('express');
+const UserController = require('../controllers/user.controller');
+const app = express.Router();
+const authMd = require('../middleware/auth.middleware');
+app.get('/home',UserController.home);
+app.get('/pruebas',authMd.ensureAuth,UserController.prueba);
+app.post('/register',UserController.saveUsers);
+app.post('/login',UserController.loginUser);
+app.get('/user/:id',authMd.ensureAuth,UserController.getUser);
+module.exports = app;
