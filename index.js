@@ -6,6 +6,6 @@ mongoose.connect('mongodb://localhost/websocial',{
   useNewUrlParser: true
 }).then( () => {
   app.listen(process.env.PORT || app.get('port'), () => {
-    console.log('Conecction correcta');
+    console.log(`Conexion Correcta escuchando en el puerto ${ app.get('port') }`);
   });
 });

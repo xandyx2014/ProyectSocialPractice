@@ -5,7 +5,7 @@ const Schema = mongose.Schema;
 const MessageSchema = Schema(
   {
     text: String,
-    createdAt: String,
+    created_at: String,
     emmitter: {
       type: Schema.Types.ObjectId,
       ref:'User'
@@ -13,7 +13,8 @@ const MessageSchema = Schema(
     receiver: {
       type: Schema.Types.ObjectId,
       ref:'User'
-    }
+    },
+    viewed: String,
     
   }
 );
